@@ -93,3 +93,32 @@ body{
 .connected-names span{
     margin-bottom: 10px;
 }
+.entered{
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(116, 114, 114);
+    width: 90% !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#chatPage{
+    display: none;
+}
+#loginPage{
+    margin-top: 0px;
+    align-items: center;
+}
+.loginContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginContainer input{
+    width: 50%;
+    height: 40px;
+    padding-left: 15px;
+    border-radius: 30px;
+}

@@ -57,7 +57,7 @@ body{
     margin-bottom: 15px;
 }
 .name{
-    color: red;
+    color: blue;
     font-weight: 600;
     font-size: 17px;
 }
@@ -99,8 +99,8 @@ body{
     font-weight: 500;
     color: rgb(116, 114, 114);
     width: 90% !important;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #chatPage{
     display: none;
@@ -121,4 +121,27 @@ body{
     height: 40px;
     padding-left: 15px;
     border-radius: 30px;
+}
+.online{
+    font-size: 19px;
+}
+.name-active{
+    color: red !important;
+}
+
+@media screen and (max-width: 850px){
+    #chatPage{
+        flex-direction: column;
+        align-items: center;
+    }
+    .chat{
+        width: 85%;
+        border-radius: 30px;
+    }
+    .connected{
+        display: none;
+    }
+    .container{
+        margin-top: 20px;
+    }
 }

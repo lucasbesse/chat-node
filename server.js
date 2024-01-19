@@ -18,5 +18,29 @@ io.on('connection', (socket)=>{
         connected_users.push(userName)
 
         socket.emit('user-ok', connected_users)
+        socket.broadcast.emit('list-update', {
+            joined_user: userName,
+            updated_list: connected_users
+        })
+    })
+    
+    socket.on('disconnect', ()=>{
+        connected_users = connected_users.filter(u => u != socket.userName);
+        if(socket.userName){
+            socket.broadcast.emit('disconnection', {
+                list: connected_users,
+                disconnected: socket.userName
+            })
+        }
+
+    })
+
+    socket.on('send-msg', (msg)=>{
+        let message = {
+            name: socket.userName,
+            msg: msg
+        }
+        socket.broadcast.emit('get-message', message)
+        socket.emit('get-message-user', message)
     })
 })
